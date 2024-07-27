@@ -53,7 +53,7 @@ function StudentRegistration() {
                             <h3>Password</h3>
                             <input type="password" placeholder='Enter Password' name="Password" onChange={onChange}/> <br/> 
                         </label> 
-                        <Button variant="primary">Login</Button>
+                        <Button variant="primary">Login.</Button>
                     </form>
                     </div>
                     :<div className='regform' >
