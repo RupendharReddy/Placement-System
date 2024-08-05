@@ -32,8 +32,8 @@
   }
   img{
     margin-bottom: 40px;
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 150px;
   }
   p{
     align-self: center;
@@ -63,8 +63,8 @@
   display: flex;
   justify-content:center;
   align-items: start;
-  color: white;
-  background-color: rgb(37, 37, 224);
+  /* color: white; */
+  /* background-color: rgb(37, 37, 224); */
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   
 }
@@ -75,8 +75,8 @@
 }
 .regbtn:active
 {
-  color: white;
-  background-color: rgb(37, 37, 224);
+  /* color: white; */
+  /* background-color: rgb(37, 37, 224); */
 }
 .formbtn{
   display: flex;
@@ -90,6 +90,7 @@
     border-radius: 4px;
     width: 100px;
     padding: 5px 0px;
+    position:static;
     /* background-color: white; */
     border: 1px solid black;
     cursor: pointer;
@@ -99,10 +100,8 @@
 
 
 }
-.loginform{
-  /* font-size: 20px; */
+/* .loginform{
   justify-content: left;
-  /* background-color: aqua; */
   margin-right: 300px;
   margin-top: 30px;
   padding: 20px;
@@ -127,7 +126,7 @@
   border-radius: 4px;
   border: 1px solid gray;
   font-weight: 500;
-}
+} */
 
 .studentRegForm{
   /* display: flex; */
