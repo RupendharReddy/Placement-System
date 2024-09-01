@@ -1,0 +1,39 @@
+.top-header {
+  position: fixed;
+  width: 100%;
+  padding: 12.5px;
+  background-color: white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 20%;
+}
+.header:first-child {
+  /* justify-content:center;
+    align-items: center; */
+}
+.avatar button{
+  border: none;
+}
+
+
+@media only screen and (max-width: 820px) {
+    .header {
+        width: 80%;
+  }
+  .avatar button{
+    margin-right: 20px;
+  }
+}
+@media only screen and (min-width: 821px) and (max-width: 1024px) {
+    .header {
+        width: 90%;
+  }
+  .avatar button{
+    margin-right: 20px;
+  }
+}

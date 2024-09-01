@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../stylefiles/dashboard.css";
 import {
   AppstoreOutlined,
   BarChartOutlined,
@@ -10,7 +11,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { Button, Layout, Menu, theme } from "antd";
+import { Avatar, Button, Layout, Menu, theme } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
 const siderStyle = {
   overflow: "auto",
@@ -76,34 +77,57 @@ const Dashboard = () => {
               items={items}
             />
           </div>
-          <div style={{display: "flex", justifyContent: "center", paddingTop: "10px", marginTop:"40px",}}>
-            <Button style={{color:"white"}} type="primary" onClick={()=>navigate("/")}>Sign Out</Button>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              paddingTop: "10px",
+              marginTop: "40px",
+            }}
+          >
+            <Button
+              style={{ color: "white" }}
+              type="primary"
+              onClick={() => navigate("/")}
+            >
+              Sign Out
+            </Button>
           </div>
         </Sider>
       </div>
       <Layout
         style={{
           marginInlineStart: 200,
+          overflow:"none",
         }}
       >
-        <Header
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-          }}
-          >
-          <div style={{
-            position:"fixed",
-            alignItems:"center",
-            display:"flex",
-            justifyContent:"center",                         
-           }}>
-            <h2>Dashboard ...................................</h2>
+        <div className="top-header">
+          {/* <Header
+            style={{
+              padding: 0,
+              background: colorBgContainer,
+            }}
+          > */}
+          <div className="header">
+            <div>
+              <h2>Dashboard</h2>
+            </div>
+            <div className="avatar">
+                <Avatar style={{
+                    backgroundColor: "#87d068",
+                    width: "40px",
+                    height: "40px",
+                    cursor: "pointer"
+                  }}
+                  icon={<UserOutlined />} onClick={()=>console.log("clicked")}></Avatar>
+            </div>
           </div>
-        </Header>
+
+          {/* </Header> */}
+        </div>
         <Content
           style={{
-            margin: "24px 16px 0",
+            margin: "70px 2px 2px 2px",
             overflow: "initial",
           }}
         >
@@ -115,7 +139,7 @@ const Dashboard = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            <p>long content</p>
+            {/* <p>long content</p>
             {
               // indicates very long content
               Array.from(
@@ -129,7 +153,7 @@ const Dashboard = () => {
                   </React.Fragment>
                 )
               )
-            }
+            } */}
           </div>
         </Content>
         <Footer
@@ -137,7 +161,7 @@ const Dashboard = () => {
             textAlign: "center",
           }}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          Design {new Date().getDate()+"-"+new Date().getMonth()+"-"+new Date().getFullYear()} Created by Ant RupendharReddy
         </Footer>
       </Layout>
     </Layout>
