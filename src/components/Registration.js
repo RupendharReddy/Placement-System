@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../stylefiles/Registration.css";
 import { Steps,Button } from 'antd';
+import { useNavigate } from "react-router-dom";
+
 
 function Registration() {
   const [current, setCurrent] = useState(0);
@@ -29,6 +31,7 @@ function Registration() {
     proofLink: "",
   });
 
+  const navigate = useNavigate();
   const onchange = (e) => {
     setStudent({ ...student, [e.target.name]: e.target.value });
     console.log(student);
@@ -37,6 +40,16 @@ function Registration() {
 
   const onSelectChange = (e) => {
     setStudent({ ...student, [e.target.name]: e.target.value });
+  }
+
+  const onSubmit=(e)=>{
+    // e.preventDefault();
+    setCurrent(3);
+    setTimeout(() => {
+      navigate("/dashboard");
+    },2000);
+    console.log("dashboard");
+    
   }
 
   return (
@@ -119,7 +132,7 @@ function Registration() {
               <input type="url" required={true} name="Marksheets" placeholder="Drive link of marksheets folder up to previous sem" onChange={onchange}/>
               <div>
                 <Button type="primary" onClick={() => setCurrent(1)}>Previous</Button>
-                <Button type="primary" onClick={() => setCurrent(3)} >Register</Button>
+                <Button type="primary" onClick={onSubmit} >Register</Button>
               </div>
             </div>
           )}

@@ -1,6 +1,13 @@
-import React from 'react';
-const App = () => (
-  <></>
-);
+import React from 'react'
+import Navlinks from './components/navlinks'
 
-export default App; // Ensure this line is present
+function App() {
+  return (
+    <div>
+      <Navlinks/>
+      
+    </div>
+  )
+}
+
+export default App

@@ -51,15 +51,15 @@ function Landing() {
         scrollToIndex(newIndex);
         return newIndex;
       });
-    }, 3000); // Change slides every 3 seconds
+    }, 2000); // Change slides every 3 seconds
 
     return () => clearInterval(interval);
   }, [companies.length, scrollToIndex]);
 
   return (
     <div className='landing'>
-      <div className='topbar'>
-        <h1 className='logo'>Carrer Hub</h1>
+      <header className='topbar'>
+        <h1 className='logo'>carrer hub</h1>
         <div className='btns'>
           {
             register ?
@@ -68,7 +68,9 @@ function Landing() {
               <Button className='registration-btn' onClick={() => setRegister(!register)}>login/signin</Button>
           }
         </div>
-      </div>
+      </header>
+        <div className='bubble1'></div>
+        <div className='bubble2'></div>
       {
         register ?
           <Authentication /> :
@@ -142,7 +144,7 @@ function Landing() {
             </div>
           </div>
       }
-      <div className='footer'>
+      <footer className='footer'>
         <div className='company-logo'>
           <h2>Carrer Hub</h2>
         </div>
@@ -159,7 +161,7 @@ function Landing() {
             837XXXX359<br />
           </ul>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }

@@ -5,12 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Landing from './components/landing';
 import Authentication from './components/Authentication';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    <Landing/>
+    <App/>
+    {/* <Landing/> */}
     {/* <Authentication/> */}
   </React.StrictMode>
 );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, notification } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import { EyeInvisibleTwoTone, EyeTwoTone, CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons';
 import '../stylefiles/Studentlogin.css';
 
@@ -10,6 +11,7 @@ export default function StudentLogin() {
     Password: "",
   });
 
+  const navigate=useNavigate();
   const onChange = (e) => {
     setLogin({ ...login, [e.target.name]: e.target.value });
   };
@@ -27,6 +29,7 @@ export default function StudentLogin() {
   const onSubmit = (e) => {
     e.preventDefault();
     openNotification();
+    navigate("/dashboard")
     console.log(login);
   };
 
