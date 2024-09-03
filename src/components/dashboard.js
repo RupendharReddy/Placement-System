@@ -4,12 +4,11 @@ import "../stylefiles/dashboard.css";
 import {
   AppstoreOutlined,
   BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
   TeamOutlined,
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
+  BellOutlined,
 } from "@ant-design/icons";
 import { Avatar, Button, Layout, Menu, theme } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
@@ -25,18 +24,34 @@ const siderStyle = {
   scrollbarColor: "unset",
 };
 const items = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  TeamOutlined,
-  ShopOutlined,
-].map((icon, index) => ({
+  {
+    icon: BarChartOutlined,
+    name: "Dashboard",
+  },
+  {
+    icon: UploadOutlined,
+    name: "Daily Challenges",
+  },
+  {
+    icon: UserOutlined,
+    name: "Jobs",
+  },
+  {
+    icon: VideoCameraOutlined,
+    name: "Tests",
+  },
+  {
+    icon: AppstoreOutlined,
+    name: "Certificates",
+  },
+  {
+    icon: TeamOutlined,
+    name: "Suport",
+  },
+].map((item, index) => ({
   key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
+  icon: React.createElement(item.icon),
+  label: item.name,
 }));
 
 const Dashboard = () => {
@@ -45,6 +60,10 @@ const Dashboard = () => {
   } = theme.useToken();
 
   const navigate = useNavigate();
+  const handleItem = (e) => {
+    console.log("e key ", e.key);
+    console.log(items[e.key - 1].label);
+  };
 
   return (
     <Layout hasSider>
@@ -68,13 +87,18 @@ const Dashboard = () => {
               Career Hub
             </h1>
           </div>
-          <div style={{ paddingTop: "10px" }}>
+          <div
+            style={{
+              padding: "20% 5px",
+            }}
+          >
             <Menu
               style={{}}
               theme="dark"
               mode="inline"
-              defaultSelectedKeys={["4"]}
+              defaultSelectedKeys={["1"]}
               items={items}
+              onClick={handleItem}
             />
           </div>
           <div
@@ -98,28 +122,22 @@ const Dashboard = () => {
       <Layout
         style={{
           marginInlineStart: 200,
-          overflow:"none",
+          overflow: "none",
         }}
       >
         <div className="top-header">
-          {/* <Header
-            style={{
-              padding: 0,
-              background: colorBgContainer,
-            }}
-          > */}
           <div className="header">
             <div>
               <h2>Dashboard</h2>
             </div>
             <div className="avatar">
-                <Avatar style={{
-                    backgroundColor: "#87d068",
-                    width: "40px",
-                    height: "40px",
-                    cursor: "pointer"
-                  }}
-                  icon={<UserOutlined />} onClick={()=>console.log("clicked")}></Avatar>
+              <BellOutlined
+                className="topicons bell"
+                onClick={() => console.log("bell clicked")}
+              />
+              <a className="profileicon">
+                <UserOutlined className="topicons profileicon" /> Profile
+              </a>
             </div>
           </div>
 
@@ -138,30 +156,20 @@ const Dashboard = () => {
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}
-          >
-            {/* <p>long content</p>
-            {
-              // indicates very long content
-              Array.from(
-                {
-                  length: 100,
-                },
-                (_, index) => (
-                  <React.Fragment key={index}>
-                    {index % 20 === 0 && index ? "more" : "..."}
-                    <br />
-                  </React.Fragment>
-                )
-              )
-            } */}
-          </div>
+          ></div>
         </Content>
         <Footer
           style={{
             textAlign: "center",
           }}
         >
-          Design {new Date().getDate()+"-"+new Date().getMonth()+"-"+new Date().getFullYear()} Created by Ant RupendharReddy
+          Design{" "}
+          {new Date().getDate() +
+            "-" +
+            new Date().getMonth() +
+            "-" +
+            new Date().getFullYear()}{" "}
+          Created by Ant RupendharReddy
         </Footer>
       </Layout>
     </Layout>
