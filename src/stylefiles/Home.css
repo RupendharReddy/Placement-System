@@ -39,6 +39,7 @@
 }
 .profileicon:hover{
   color:blue;
+  cursor: pointer;
 }
 .bell{
   background-color: orange;

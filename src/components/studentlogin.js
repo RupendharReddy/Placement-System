@@ -29,7 +29,7 @@ export default function StudentLogin() {
   const onSubmit = (e) => {
     e.preventDefault();
     openNotification();
-    navigate("/dashboard")
+    navigate("/Home")
     console.log(login);
   };
 

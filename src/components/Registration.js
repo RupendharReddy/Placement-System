@@ -46,9 +46,9 @@ function Registration() {
     // e.preventDefault();
     setCurrent(3);
     setTimeout(() => {
-      navigate("/dashboard");
+      navigate("/Home");
     },2000);
-    console.log("dashboard");
+    console.log("Home");
     
   }
 

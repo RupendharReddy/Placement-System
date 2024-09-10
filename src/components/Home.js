@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../stylefiles/dashboard.css";
+import "../stylefiles/Home.css";
 import {
   AppstoreOutlined,
   BarChartOutlined,
@@ -11,6 +11,14 @@ import {
   BellOutlined,
 } from "@ant-design/icons";
 import { Avatar, Button, Layout, Menu, theme } from "antd";
+import Dashboard from "../containers/Dashboard";
+import Jobs from "../containers/Jobs";
+import DailyChallenges from "../containers/DailyChallenges";
+import Certificates from "../containers/Certificates";
+import Support from "../containers/Support";
+import Tests from "../containers/Tests";
+import Profile from "../containers/Profile";
+
 const { Header, Content, Footer, Sider } = Layout;
 const siderStyle = {
   overflow: "auto",
@@ -54,17 +62,40 @@ const items = [
   label: item.name,
 }));
 
-const Dashboard = () => {
+const Home = () => {
+  const [container,setContainer] = useState({name:"Dashboard"});
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
   const navigate = useNavigate();
   const handleItem = (e) => {
-    console.log("e key ", e.key);
-    console.log(items[e.key - 1].label);
+    setContainer({name:items[e.key - 1].label});
   };
+  const renderContent=()=>{
+    switch(container.name){
+      case "Dashboard":
+        return <Dashboard/>
+      case "Jobs":
+        return <Jobs/>
+      case "Daily Challenges":
+        return <DailyChallenges/>
+      case "Certificates":
+        return <Certificates/>
+      case "Support":
+        return <Support/>
+      case "Tests":
+        return <Tests/>
+      case "Profile":
+        return <Profile/>
+      default:
+        return <Dashboard/>
+    }
+  }
 
+  useEffect(() => {
+    console.log(container.name);
+  }, [container]);
   return (
     <Layout hasSider>
       <div>
@@ -128,16 +159,16 @@ const Dashboard = () => {
         <div className="top-header">
           <div className="header">
             <div>
-              <h2>Dashboard</h2>
+              <h2>{container.name}</h2>
             </div>
             <div className="avatar">
               <BellOutlined
                 className="topicons bell"
                 onClick={() => console.log("bell clicked")}
               />
-              <a className="profileicon">
-                <UserOutlined className="topicons profileicon" /> Profile
-              </a>
+              <div className="profileicon" onClick={()=>setContainer({name:"Profile"})}>
+                <UserOutlined className="topicons " /> <b>Profile</b>
+              </div>
             </div>
           </div>
 
@@ -145,34 +176,24 @@ const Dashboard = () => {
         </div>
         <Content
           style={{
-            margin: "70px 2px 2px 2px",
-            overflow: "initial",
+            // overflow: "initial",
+            margin: "70px 10px 2px 10px",
+            // backgroundColor:"antiquewhite",
           }}
         >
           <div
             style={{
               padding: 24,
               textAlign: "center",
-              background: colorBgContainer,
+              // background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}
-          ></div>
+          >
+            {renderContent()}
+          </div>
         </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-          }}
-        >
-          Design{" "}
-          {new Date().getDate() +
-            "-" +
-            new Date().getMonth() +
-            "-" +
-            new Date().getFullYear()}{" "}
-          Created by Ant RupendharReddy
-        </Footer>
       </Layout>
     </Layout>
   );
 };
-export default Dashboard;
+export default Home;

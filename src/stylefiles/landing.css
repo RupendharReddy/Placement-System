@@ -263,12 +263,16 @@ body{
         align-items: center;
         a{
             color: blue;
+            cursor: pointer;
         }
     }
     b{
         padding-top:10px ;
 
     }
+}
+.site a button{
+    cursor: pointer;
 }
 .footer{
     border-top: 1px dashed gray;
