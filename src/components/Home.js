@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../stylefiles/Home.css";
 import {
   AppstoreOutlined,
@@ -72,10 +72,13 @@ const Home = () => {
   const handleItem = (e) => {
     setContainer({name:items[e.key - 1].label});
   };
+  // const location=useLocation();
+  // console.log(location.state.Mailid);
+  
   const renderContent=()=>{
     switch(container.name){
       case "Dashboard":
-        return <Dashboard/>
+        return <Dashboard />
       case "Jobs":
         return <Jobs/>
       case "Daily Challenges":
@@ -92,6 +95,8 @@ const Home = () => {
         return <Dashboard/>
     }
   }
+  // const location=useLocation();
+  // const Mailid = location.state || {};
 
   useEffect(() => {
     console.log(container.name);
@@ -190,6 +195,10 @@ const Home = () => {
             }}
           >
             {renderContent()}
+
+          </div>
+          <div style={{ height: "100px" }}>
+            
           </div>
         </Content>
       </Layout>

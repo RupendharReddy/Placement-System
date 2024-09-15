@@ -4,8 +4,8 @@
 }
 .stu-details{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
 }
 .stu-details img{
     width: 100%;
@@ -13,21 +13,106 @@
 
 }
 .profileimage{
-    width: 30vb;
-    height:30vh;
+    top:50px;
+    left: 10vb;  
+    width: 25vb;
+    height:25vh;
+    border: 5px solid white;
     /* padding: 4px; */
     background-color:aliceblue;
-    margin: 2px;
     /* border-radius: 50%; */
     justify-content: left;
     
 }
 .stu-details{
-    background-color: aliceblue;
-    /* width: %; */
-    /* height: 100%; */
+    height: 150px;
+    border-radius: 10px;
     /* position: absolute; */
     /* left: 80px; */
     /* top: 0px; */
-    background-color: aqua;
+    /* background-color: aqua; */
+    /* background-image: url("../container../images/wallpaper.jpg"); */
+    /* background-size: cover; */
+}
+
+.info-div{
+    border-radius: 10px;
+    /* background-color: aqua; */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+}
+.info1 h2{
+    /* font-size: 1.5vw; */
+}
+.info2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 15px;
+}
+.stu-info{
+    padding: 30px 0px 30px 0px;
+}
+
+.chart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+.chart-div1, .chart-div2{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 49%;
+    height: 50vh;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    
+}
+.jobs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@media only screen and (max-width: 820px) {
+    .stu-info{
+        margin-top:10vh;
+    }
+    .info2{
+        clear: auto;
+        flex-direction: column;
+    }
+    .stu-details{
+        justify-content: center;
+        align-items: center;
+    }
+    .profileimage{
+        left: 0px;
+    }
+    .chart{
+        flex-direction: column;   
+    }
+    .chart-div1,.chart-div2{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
+@media only screen and (min-width: 821px) and (max-width: 1024px) {
+    .info1{
+        padding-left: 35vb;
+        margin-right: 10px;
+    }
 }

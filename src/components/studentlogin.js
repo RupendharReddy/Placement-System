@@ -29,7 +29,8 @@ export default function StudentLogin() {
   const onSubmit = (e) => {
     e.preventDefault();
     openNotification();
-    navigate("/Home")
+    navigate("/Home");
+    // navigate("/Home",{state:{Mailid:login.Mail}});
     console.log(login);
   };
 
