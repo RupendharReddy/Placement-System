@@ -10,7 +10,7 @@ import {
   VideoCameraOutlined,
   BellOutlined,
 } from "@ant-design/icons";
-import { Avatar, Button, Layout, Menu, theme } from "antd";
+import { Avatar, Button,Badge, Layout, Menu, theme } from "antd";
 import Dashboard from "../containers/Dashboard";
 import Jobs from "../containers/Jobs";
 import DailyChallenges from "../containers/DailyChallenges";
@@ -18,6 +18,7 @@ import Certificates from "../containers/Certificates";
 import Support from "../containers/Support";
 import Tests from "../containers/Tests";
 import Profile from "../containers/Profile";
+import logo from "../images/logo.png";
 
 const { Header, Content, Footer, Sider } = Layout;
 const siderStyle = {
@@ -26,10 +27,11 @@ const siderStyle = {
   // display: "flex",
   position: "fixed",
   insetInlineStart: 0,
-  top: 0,
+  top: 60,
   bottom: 0,
   scrollbarWidth: "thin",
   scrollbarColor: "unset",
+  collapsedWidth: 0,
 };
 const items = [
   {
@@ -63,38 +65,38 @@ const items = [
 }));
 
 const Home = () => {
-  const [container,setContainer] = useState({name:"Dashboard"});
+  const [container, setContainer] = useState({ name: "Daily Challenges" });
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
   const navigate = useNavigate();
   const handleItem = (e) => {
-    setContainer({name:items[e.key - 1].label});
+    setContainer({ name: items[e.key - 1].label });
   };
   // const location=useLocation();
   // console.log(location.state.Mailid);
-  
-  const renderContent=()=>{
-    switch(container.name){
+
+  const renderContent = () => {
+    switch (container.name) {
       case "Dashboard":
-        return <Dashboard />
+        return <Dashboard />;
       case "Jobs":
-        return <Jobs/>
+        return <Jobs />;
       case "Daily Challenges":
-        return <DailyChallenges/>
+        return <DailyChallenges />;
       case "Certificates":
-        return <Certificates/>
+        return <Certificates />;
       case "Support":
-        return <Support/>
+        return <Support />;
       case "Tests":
-        return <Tests/>
+        return <Tests />;
       case "Profile":
-        return <Profile/>
+        return <Profile />;
       default:
-        return <Dashboard/>
+        return <Dashboard />;
     }
-  }
+  };
   // const location=useLocation();
   // const Mailid = location.state || {};
 
@@ -103,10 +105,51 @@ const Home = () => {
   }, [container]);
   return (
     <Layout hasSider>
+      <div className="top-header">
+        <div className="logo">
+          <img src={logo} alt="logo" onClick={() => window.location.reload()} />
+          <h1 onClick={() => window.location.reload()}>Career Hub</h1>
+        </div>
+        <div className="header">
+          <div
+            style={{
+              width: "80%",
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+            }}
+          >
+            <h2>{container.name}</h2>
+          </div>
+          <div
+            className="avatar"
+          >
+            {/* <Badge size="small" count={5}>
+
+            <BellOutlined
+              className="topicons bell"
+              onClick={() => console.log("bell clicked")}
+            />
+            </Badge> */}
+            <div
+              className="profileicon"
+              onClick={() => setContainer({ name: "Profile" })}
+            >
+              <Avatar
+                style={{
+                  backgroundColor: "#87d068",
+                  
+                }}
+                icon={<UserOutlined />}
+              />{" "}
+            </div>
+          </div>
+        </div>
+      </div>
       <div>
         <Sider style={siderStyle}>
           {/* className="demo-logo-vertical" */}
-          <div
+          {/* <div
             style={{
               // position: "fixed",
               backgroundColor: "rgb(0 21 41)",
@@ -114,6 +157,7 @@ const Home = () => {
               justifyContent: "center",
               padding: "15px",
               borderBottom: "1px solid white",
+              
             }}
           >
             <h1
@@ -122,7 +166,7 @@ const Home = () => {
             >
               Career Hub
             </h1>
-          </div>
+          </div> */}
           <div
             style={{
               padding: "20% 5px",
@@ -161,7 +205,7 @@ const Home = () => {
           overflow: "none",
         }}
       >
-        <div className="top-header">
+        {/* <div className="top-header">
           <div className="header">
             <div>
               <h2>{container.name}</h2>
@@ -177,8 +221,8 @@ const Home = () => {
             </div>
           </div>
 
-          {/* </Header> */}
-        </div>
+        </div> */}
+        {/* </Header> */}
         <Content
           style={{
             // overflow: "initial",
@@ -195,11 +239,8 @@ const Home = () => {
             }}
           >
             {renderContent()}
-
           </div>
-          <div style={{ height: "100px" }}>
-            
-          </div>
+          <div style={{ height: "100px" }}></div>
         </Content>
       </Layout>
     </Layout>

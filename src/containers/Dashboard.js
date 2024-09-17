@@ -151,7 +151,8 @@ const DailyChallenges={
         </div>
       </div>
       <div className="jobs">
-        <div>
+          <h2>Jobs Summary</h2>
+        <div className="jobs-info">
         {Object.entries(jobs).map(([key,value])=>(
           <h3>{key.charAt(0).toUpperCase() + key.slice(1)}: <b>{value}</b></h3>
         ))}
