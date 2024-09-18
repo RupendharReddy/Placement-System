@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "../stylefiles/Home.css";
+// import "../stylefiles/Home.css";
 import {
   AppstoreOutlined,
   BarChartOutlined,
@@ -77,7 +77,7 @@ const Home = () => {
   // const location=useLocation();
   // console.log(location.state.Mailid);
 
-  const renderContent = () => {
+  const RenderContent = () => {
     switch (container.name) {
       case "Dashboard":
         return <Dashboard />;
@@ -148,25 +148,6 @@ const Home = () => {
       </div>
       <div>
         <Sider style={siderStyle}>
-          {/* className="demo-logo-vertical" */}
-          {/* <div
-            style={{
-              // position: "fixed",
-              backgroundColor: "rgb(0 21 41)",
-              display: "flex",
-              justifyContent: "center",
-              padding: "15px",
-              borderBottom: "1px solid white",
-              
-            }}
-          >
-            <h1
-              style={{ color: "white", cursor: "pointer" }}
-              onClick={() => window.location.reload()}
-            >
-              Career Hub
-            </h1>
-          </div> */}
           <div
             style={{
               padding: "20% 5px",
@@ -238,7 +219,7 @@ const Home = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            {renderContent()}
+            <RenderContent />
           </div>
           <div style={{ height: "100px" }}></div>
         </Content>

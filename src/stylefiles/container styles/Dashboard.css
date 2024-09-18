@@ -41,8 +41,12 @@
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 
 }
-.info1 h2{
+.info1{
     /* font-size: 1.5vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .info2{
     display: flex;

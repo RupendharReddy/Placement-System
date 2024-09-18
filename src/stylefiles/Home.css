@@ -68,9 +68,38 @@
   cursor: pointer;
 }
 
+.sider{
+  overflow: "auto";
+  height: "100vh";
+  /* display: "flex"; */
+  position: "fixed";
+  inset-inline-start: 0;
+  top: 60;
+  bottom: 0;
+  scrollbar-width: "thin";
+  scrollbar-color: "unset";
+  margin-top: 58px;
+    height: 91vh;
 
-
-
+  /* collapse: 0; */
+}
+#content-layout{
+  overflow-y: scroll;
+  margin-top: 20px;
+  /* height: 100%; */
+  border: 2px solid black;
+  padding-bottom: 20px;
+}
+.content{
+  margin: "70px 10px 2px 20px";
+  /* background-color: aqua; */
+}
+.page-content{
+  
+  padding: 24;
+  text-align: "center";
+  border-radius: 5px;
+}
 
 
 @media only screen and (max-width: 820px) {

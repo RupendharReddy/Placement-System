@@ -59,7 +59,7 @@ function Landing() {
   return (
     <div className='landing'>
       <header className='topbar'>
-        <h1 className='logo'>Student Carrer Hub</h1>
+        <h1 className='logo' style={{fontSize: '25px'}}>Student Carrer Hub</h1>
         <div className='btns'>
           {
             register ?
