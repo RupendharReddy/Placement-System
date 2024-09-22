@@ -37,7 +37,7 @@
 
 .info-div{
     border-radius: 10px;
-    /* background-color: aqua; */
+    background-color: rgb(68, 136, 239);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 
 }
@@ -88,6 +88,7 @@
     margin-top: 23px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     padding: 15px 0px 15px 0px;
+    border-radius: 10px;
 }
 .jobs-info h3{
     padding: 10px 10px;
@@ -96,6 +97,36 @@
     border-radius: 10px;
     width: 30vb;
 }
+.dash-footer{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    /* border: 2px solid blue; */
+    margin-top: 23px;
+    border-radius: 10px;
+}
+.company-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(18, 175, 81);
+    width: 20%;
+    border-radius: 10px ;
+    margin: 2px;
+}
+
+
+.footer-links ul a{
+    color: black;
+    /* background-color: blue; */
+}
+.footer-links ul img{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
 
 
 @media only screen and (max-width: 820px) {
@@ -125,6 +156,13 @@
     }
     .jobs-info{
         margin: 15px 0px;
+    }
+    .dash-footer{
+        flex-direction: column;
+    }
+    .company-logo{
+        width: 100%;
+        height: 20vh;
     }
 
 }

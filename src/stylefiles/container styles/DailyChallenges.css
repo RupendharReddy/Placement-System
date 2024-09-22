@@ -1,3 +1,8 @@
+.dc-content{
+    max-height: 92vh;
+    /* overflow: hidden; */
+    
+}
 .dailychallenge{
     display: flex;
     flex-direction: row-reverse;
@@ -26,7 +31,7 @@
 
 }
 .dc-info h2{
-    font-size: 1.5vw    
+    /* font-size: 1.5vw     */
 }
 .dc-info h3{
     font-size: 1vw;
@@ -56,6 +61,7 @@
     align-items: center;
     padding: 30px 0px 20px 0px;
     /* margin-top: 10px; */
+    border-radius: 10px;
     background-color: white;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     
@@ -95,4 +101,36 @@
     width: 50%; */
     /* background-color: blue; */
 
+}
+.dc-result{
+    color: green;
+    margin-top: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#submit{
+    /* margin-top: 20px; */
+    margin-bottom: 0px;
+    width: 20vb;
+}
+
+@media screen and (max-width: 820px) {
+    .dailychallenge{
+        flex-direction: column-reverse;
+    }
+    .dc-info{
+        width: 100%;
+    }
+    .dc{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .dc-result{
+        margin-top: 35px;
+    }
+    
 }

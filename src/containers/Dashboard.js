@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "../stylefiles/container styles/Dashboard.css";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Image } from "antd";
+import linkedin from "../images/linkedin.png";
+import logo from "../images/logo.png";
+import gmail from "../images/gmail.png";
+import git from "../images/git.png";
+import contact from "../images/contact.png";
 import profile from "../images/profile1.jpg";
 import wallpaper from "../images/wallpaper.jpg";
 import Employee from "../images/Employee.png"
@@ -158,6 +163,25 @@ const DailyChallenges={
         ))}
         </div>
         <img src={Employee} alt="Employee image" style={{width:"30vb",height:"30vh"}}/>
+      </div>
+      <div className="dash-footer">
+        <div className='company-logo'>
+            <img src={logo} alt='logo' style={{ width: '50px', height: '50px', margin: '5px 10px 0px 0px' }} />
+            <h2>Carrer Hub</h2>
+        </div>
+        <div className='footer-links'>
+            <ul>
+              <br />
+              <img src={linkedin} alt='linkedin' />
+              <a href='https://www.linkedin.com/in/rupendhar-reddy-varugu-390a53263/recent-activity/all/'> Linkedin</a><br />
+              <img src={gmail} alt='linkedin' />
+              varugurupendharreddy@gmail.com <br />
+              <img src={git} alt='linkedin'  />
+              <a href='https://github.com/RupendharReddy'> Github</a><br />
+              <img src={contact} alt='contact' />
+              837XXXX359<br />
+            </ul>
+        </div>
       </div>
     </div>
   );

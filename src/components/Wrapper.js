@@ -90,13 +90,6 @@ function Wrapper() {
             <h2>{container.name}</h2>
           </div>
           <div className="avatar">
-            {/* <Badge size="small" count={5}>
-
-            <BellOutlined
-              className="topicons bell"
-              onClick={() => console.log("bell clicked")}
-            />
-            </Badge> */}
             <div
               className="profileicon"
               onClick={() => navigate("/profile")}
@@ -146,13 +139,7 @@ function Wrapper() {
         </Sider>
         
       </div>
-      <Layout id="content-layout"
-        style={{
-          overflowY: "scroll",
-          marginTop:"20px",
-          maxHeight: "92vh",
-        }}
-      >
+      <Layout id="content-layout">
         <Content className="content">
           <div className="page-content">
           <Routes>
