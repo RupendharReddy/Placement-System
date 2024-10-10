@@ -16,7 +16,7 @@ function Authentication() {
                 <div>
                     <p>✅Build your profile</p>
                     <p>✅Get your dream job</p>
-                    <p>✅Get placed</p>
+                    <p>✅Full Fill your dream</p>
                 </div>
             </div>
             <div className='form'>

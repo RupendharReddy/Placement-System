@@ -46,56 +46,53 @@ body{
     height: 70px;
     display: flex;
     background-color: white;
-    justify-content:space-evenly;
+    /* justify-content:center; */
     position: fixed;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     align-items: center;
+}
+.logodiv{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
 
-    .btns{
-        /* display: flex;
-        margin-left: 10px;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 20px; */
-        /* border: 2px solid blue; */
-        button{
-            width: 100px;
-            margin-left: 300px;
-        }
-    }
-    .logo{
-        /* font-weight: bold; */
-        /* font-size: 40px; */
-        /* padding-left: 20px; */
-        /* color: blue; */
-        color: black;
-        font-family:cursive;
-        /* padding-left:40px; */
-        margin-left: 35%;
-        margin-right: 5%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* position: relative; */
-    }
-    /* .login-btn{
-        border-radius: 20px;
-        font-size: 15px;
-        padding: 5px 10px 5px 10px ;
-        color: blue;
-        border: 1px solid blue;
-        font-weight: 500;
-        background-color: white;
-    } */
-    .registration-btn{
-        border-radius: 4px;
-        font-size: 15px;
-        padding: 5px 10px 5px 10px ;
-        font-weight: 500;
-        border-color: rgb(20, 109, 144);
-        /* background-color: orangered; */
-        color: rgb(35, 134, 173);
-    }
+}
+.btns{
+    /* background-color: aquamarine; */
+    width: 25%;
+    display: flex;
+    justify-content:end;
+    
+}
+/* .button{
+    width: 100px;
+    margin-left: 300px;
+} */
+.llogo{
+    /* font-weight: bold; */
+    /* font-size: 40px; */
+    /* padding-left: 20px; */
+    /* color: blue; */
+    color: black;
+    font-family:cursive;
+    /* padding-left:40px; */
+    margin-left: 35%;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+}
+.registration-btn{
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px ;
+    font-weight: 500;
+    border-color: rgb(20, 109, 144);
+    /* background-color: orangered; */
+    color: rgb(35, 134, 173);
 }
 
 .content{
@@ -103,28 +100,25 @@ body{
     width: 100%;
     padding: 100px 50px 100% 50px;
     scrollbar-width: none;
-    .heading{
-        /* flex-direction: row; */
-    }
-    .heading .heading-text{
-        float: left;
-        /* flex-direction: column; */
-        padding:90px 200px 0px 200px;
-        h1{
-            font-size: 40px;
-            font-weight: bold;
-        }
-        h2{ 
-            font-size: 30px;
-        }
-    }
-
-    img{
-        width: 400px;
-        height: 300px;
-    }
-
-
+    
+    
+    
+}
+img{
+    width: 400px;
+    height: 300px;
+}
+.heading .heading-text{
+    float: left;
+    /* flex-direction: column; */
+    padding:90px 200px 0px 200px;
+}
+.heading h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+.heading h2{ 
+    font-size: 30px;
 }
 .companies{
     /* padding-top: 10px; */
@@ -305,3 +299,13 @@ body{
     width: 200px;
     height: auto;
 }
+
+@media screen and (max-width: 820px) {
+    .registration-btn{
+        font-size: 10px;
+        padding: 3px 8px 3px 8px ;
+    }
+}
+
+
+

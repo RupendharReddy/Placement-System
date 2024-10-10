@@ -6,16 +6,10 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
+import "../stylefiles/Home.css";
 import { Avatar, Button, Layout, Menu } from "antd";
-import React, { useState } from "react";
-import {
-  BrowserRouter,
-  Route,
-  Router,
-  Routes,
-  Switch,
-  useNavigate,
-} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation,Route,Routes } from "react-router-dom"; // import useLocation
 import logo from "../images/logo.png";
 import Sider from "antd/es/layout/Sider";
 import { Content } from "antd/es/layout/layout";
@@ -29,6 +23,11 @@ import Profile from "../containers/Profile";
 
 const items = [
   {
+    icon: UserOutlined,
+    path: "/profile",
+    name: "profile",
+  },
+  {
     icon: BarChartOutlined,
     path: "/dashboard",
     name: "Dashboard",
@@ -39,14 +38,9 @@ const items = [
     name: "Daily Challenges",
   },
   {
-    icon: UserOutlined,
+    icon: TeamOutlined,
     path: "/jobs",
     name: "Jobs",
-  },
-  {
-    icon: VideoCameraOutlined,
-    path: "/tests",
-    name: "Tests",
   },
   {
     icon: AppstoreOutlined,
@@ -54,29 +48,39 @@ const items = [
     name: "Certificates",
   },
   {
-    icon: TeamOutlined,
-    path: "/suport",
-    name: "Suport",
+    icon: VideoCameraOutlined,
+    path: "/support",
+    name: "Support",
   },
-].map((item, index) => ({
+].map((item) => ({
   key: item.path,
   icon: React.createElement(item.icon),
   label: item.name,
 }));
+
 function Wrapper() {
-  const [container, setContainer] = useState({ name: "Daily Challenges" });
+  const [container, setContainer] = useState({ name: "Dashboard" });
   const navigate = useNavigate();
+  const location = useLocation(); // useLocation to get the current route
+
+  // Handle menu item selection
   const handleItem = (e) => {
-    console.log(e, e.key);
+    const selectedItem = items.find((item) => item.key === e.key);
+    setContainer({ name: selectedItem.label });
     navigate(e.key);
-    console.log(items[0]);
   };
+
+  useEffect(() => {
+    // Navigate to dashboard on first load
+    navigate("/dashboard");
+  }, []);
+
   return (
-    <Layout hasSider>
+    <Layout>
       <div className="top-header">
         <div className="logo">
-          <img src={logo} alt="logo" onClick={() => navigate("/")} />
-          <h1 onClick={() => navigate("/")}>Career Hub</h1>
+          <img src={logo} alt="logo" onClick={() => window.location.reload()} />
+          <h1 onClick={() =>window.location.reload()}>Career Hub</h1>
         </div>
         <div className="header">
           <div
@@ -87,74 +91,50 @@ function Wrapper() {
               alignItems: "center",
             }}
           >
-            <h2>{container.name}</h2>
+            <h2 id="containername">{container.name}</h2>
           </div>
-          <div className="avatar">
-            <div
-              className="profileicon"
-              onClick={() => navigate("/profile")}
-            >
-              <Avatar
-                style={{
-                  backgroundColor: "#87d068",
-                }}
-                icon={<UserOutlined />}
-              />{" "}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <Sider className="sider">
-          <div
-            style={{
-              padding: "20% 5px",
-            }}
-          >
-            <Menu
-              style={{}}
-              theme="dark"
-              mode="inline"
-              defaultSelectedKeys={["1"]}
-              items={items}
-              onClick={handleItem}
-            />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              paddingTop: "10px",
-              marginTop: "40px",
-            }}
-          >
-            <Button
+          <Button
               style={{ color: "white" }}
               type="primary"
               onClick={() => navigate("/")}
             >
               Sign Out
             </Button>
-          </div>
+        </div>
+      </div>
+      <div>
+        <Sider className="sider" >
+          <Menu className="menu"
+            theme="dark"
+            // mode="inline"
+            // Dynamically set defaultSelectedKeys based on the current route
+            defaultSelectedKeys={[location.pathname]} // Set selected item based on the current path
+            items={items}
+            onClick={handleItem}
+          />
         </Sider>
-        
       </div>
       <Layout id="content-layout">
         <Content className="content">
-          <div className="page-content">
           <Routes>
-            <Route path="/dashboard" element={<Dashboard/>} />
-            <Route path="/daily-challenges" element={<DailyChallenges/>} />
-            <Route path="/jobs" element={<Jobs/>} />
-            <Route path="/tests" element={<Tests/>}/>
-            <Route path="/certificates" element={<Certificates/>}/>
-            <Route path="/suport" element={<Support/>} />
-            <Route path="/profile" element={<Profile/>} /> 
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/daily-challenges" element={<DailyChallenges />} />
+            <Route path="/jobs" element={<Jobs />} />
+            {/* <Route path="/tests" element={<Tests />} /> */}
+            <Route path="/certificates" element={<Certificates />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
-        </div>
-          <div style={{ height: "100px" }}></div>
         </Content>
       </Layout>
+      <Menu
+        className="footer-nav"
+        theme="dark"
+        mode="horizontal"
+        defaultSelectedKeys={[location.pathname]} // Also update footer nav to reflect current route
+        items={items}
+        onClick={handleItem}
+      />
     </Layout>
   );
 }

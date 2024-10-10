@@ -114,7 +114,7 @@ function Jobs() {
 
   setTimeout(() => {
     setLoading(false);
-  }, 1000);
+  }, 700);
 
   // Handle the filter change
   const handleFilterChange = (value) => {
@@ -152,12 +152,10 @@ function Jobs() {
     }
     return true; // "All jobs" will return all jobs
   });
+  
 
   return (
     <div id='jobs-content'>
-      {/* <h1>List of Jobs</h1> */}
-
-      {/* Dropdown for selecting filter */}
       <Select value={filter} onChange={handleFilterChange} style={{ width: 200, marginBottom: '20px' }}>
         <Option value="All">All Jobs</Option>
         <Option value="Eligible">Eligible Jobs</Option>
@@ -166,6 +164,7 @@ function Jobs() {
 
       <div id='jobs-container'>
         {
+          
           filteredJobs.map((job, index) => {
             const isEligible = studentinfo.dept === job.dept &&
               studentinfo.ssc >= job.eligiblity.ssc &&

@@ -27,18 +27,18 @@
   height: 500px;
   margin-left: 40px;
   /* position: fixed; */
-  .reg-img h2{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  img{
-    margin-bottom: 40px;
-    width: 200px;
-    height: 150px;
-  }
-  p{
-    align-self: center;
-    margin-top: 10px;
-  }
+}
+.reg-img h2{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+img{
+  margin-bottom: 40px;
+  width: 200px;
+  height: 150px;
+}
+p{
+  align-self: center;
+  margin-top: 10px;
 }
 .form{
   display: flex;

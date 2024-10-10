@@ -54,7 +54,7 @@ function Registration() {
 
   return (
     <div className="regdiv">
-      <div>
+      <div className="regformdiv">
         <form >
           {current === 0 && (
             <div className="regform">

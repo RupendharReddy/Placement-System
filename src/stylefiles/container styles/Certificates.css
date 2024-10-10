@@ -1,0 +1,29 @@
+@keyframes scaleImage {
+    0% {
+        width: 30%;  /* Starting small */
+    }
+    50% {
+        height: 80%;
+        width: 50%;  /* Transition to bigger size */
+    }
+    100% {
+        width: 40%;  /* Return to original size */
+    }
+}
+
+#nodataimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    /* background-color: antiquewhite; */
+}
+
+#nodataimg img{
+    /* background-color: aquamarine; */
+    width: 50%;
+    height: 60%;
+    object-fit: cover;
+    animation: scaleImage 3s ease-in-out forwards;
+}

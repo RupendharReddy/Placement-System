@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
 function Tests() {
+  const names = ["John", "Jane", "Smith"];
   return (
-    <div>Tests</div>
-  )
+    <div>
+      <ul>
+        {names.map((element, i) => (
+          <li key={i}>{element}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default Tests
+export default Tests;

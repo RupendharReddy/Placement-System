@@ -167,7 +167,7 @@ const DailyChallenges={
       <div className="dash-footer">
         <div className='company-logo'>
             <img src={logo} alt='logo' style={{ width: '50px', height: '50px', margin: '5px 10px 0px 0px' }} />
-            <h2>Carrer Hub</h2>
+            <h2>Social Media Links</h2>
         </div>
         <div className='footer-links'>
             <ul>

@@ -1,27 +1,36 @@
-.regform {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+.regforme {
+    /* overflow: hidden; */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
 }
 .regdiv{
     display:flex;
+    overflow-x: hidden;
 }
 .steps{
     margin-left: 15%;
-    /* height: 400px; */
+    height: 400px;
     padding: 120px 10px 0px 10px;
     /* float: right; */
     /* background-color: antiquewhite; */
 }
 .regform{
     /* margin-top: 10px; */
-    margin-left:8% ;
-    padding: 10px;
+    /* margin-left:8% ; */
+    padding:0px 10px 0px 10px;
     /* background-color: green; */
     width:100%;
     height: 400px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x:hidden;
+    overflow-y: none;
     /* text-align: justify; */
+}
+.formdiv::-webkit-scrollbar {
+    scrollbar-width: 1px;
+}
+form{
+    /* overflow-x: none;
+    overflow-y:none; */
 }
 .regform label{
     display: block;
