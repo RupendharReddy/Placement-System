@@ -6,9 +6,9 @@ import { Button } from 'antd';
 function DailyChallenges() {
   const date = new Date();
   const [currentDate, setCurrentDate] = useState("");
-  const question = "A=10 B=20 C=30 what is A+B+C?";
-  const [options, setOptions] = useState(["10", "20", "30", "60"]);
-  const [answer, setAnswer] = useState("60");
+  const question = "Which of the following is a correct syntax to select all columns from a table named 'Customers'?";
+  const [options, setOptions] = useState(["SELECT * FROM Customers", "SELECT Customers", "GET * FROM Customers", "SELECT all FROM Customers"]);
+  const [answer, setAnswer] = useState("SELECT * FROM Customers");
   const [selectedOption, setSelectedOption] = useState(null); // To track the selected option
   const [result, setResult] = useState(null); // To store the result of the answer check
   const [dc, setDc] = useState({
@@ -84,7 +84,7 @@ function DailyChallenges() {
                       onChange={handleOptionChange}
                     />
                     <b>{option}</b>
-                    <br />
+                    <br /><br />
                   </label>
                 ))}
                 <Button type="primary" onClick={handleSubmit} id='submit'>Submit</Button>
