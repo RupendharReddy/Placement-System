@@ -99,7 +99,7 @@ function Dashboard() {
     labels: lineLabels,
     datasets: [{
       label: 'Semester Scores',
-      data: [7.3, 8, 8.5, 8.0, 9.8, 9, 0, 0],
+      data: [7.34, 7.88, 7.9, 7.61, 8.18, 7.2, 0, 0],
       fill: false,
       borderColor: 'rgb(75, 192, 192)',
       tension: 0,
@@ -111,7 +111,8 @@ const jobs={
   Applyed:10,
   Accepted:5,
   Rejected:5,
-  Pending:5
+  Pending:5,
+  PlacedAt:1
 }
 
 const DailyChallenges={
@@ -175,7 +176,7 @@ const DailyChallenges={
               <img src={linkedin} alt='linkedin' />
               <a href='https://www.linkedin.com/in/rupendhar-reddy-varugu-390a53263/recent-activity/all/'> Linkedin</a><br />
               <img src={gmail} alt='linkedin' />
-              varugurupendharreddy@gmail.com <br />
+              rupe@gmail.com <br />
               <img src={git} alt='linkedin'  />
               <a href='https://github.com/RupendharReddy'> Github</a><br />
               <img src={contact} alt='contact' />

@@ -82,7 +82,7 @@ function Landing() {
                 <h1>Find your dream job now</h1>
                 <h2>Explore top companies</h2>
               </div>
-              <img src={hiring} alt='hiring' />
+              <img src={hiring} alt='hiring' id='hiringgif'/>
             </div>
             <div className='companies'>
               <h1>Top companies hiring now<b>.</b></h1>
@@ -156,7 +156,7 @@ function Landing() {
             <img src={linkedin} alt='linkedin' style={{ width: '30px', height: '30px', margin: '5px 10px 0px 0px' }} />
             <a href='https://www.linkedin.com/in/rupendhar-reddy-varugu-390a53263/recent-activity/all/'> Linkedin</a><br />
             <img src={gmail} alt='linkedin' style={{ width: '30px', height: '30px', margin: '5px 10px 0px 0px' }} />
-            varugurupendharreddy@gmail.com <br />
+            rupe@gmail.com <br />
             <img src={git} alt='linkedin' style={{ width: '30px', height: '30px', margin: '5px 10px 0px 0px' }} />
             <a href='https://github.com/RupendharReddy'> Github</a><br />
             <img src={contact} alt='linkedin' style={{ width: '30px', height: '30px', margin: '5px 10px 0px 0px' }} />

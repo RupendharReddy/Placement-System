@@ -3,44 +3,43 @@ import { Button, Form, Input, message } from 'antd';
 
 const formItemLayout = {
   labelCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 6,
-    },
+    xs: { span: 24 },
+    sm: { span: 6 },
   },
   wrapperCol: {
-    xs: {
-      span: 24,
-    },
-    sm: {
-      span: 14,
-    },
+    xs: { span: 24 },
+    sm: { span: 14 },
   },
 };
 
 const Support = () => {
+  const [form] = Form.useForm();
   const [componentVariant, setComponentVariant] = useState('outlined');
 
   useEffect(() => {
     // Configure the message component position
     message.config({
-      top: 100, // distance from the top
-      duration: 2, // duration the message will display for
-      maxCount: 1, // only show one message at a time
+      top: 100,
+      duration: 2,
+      maxCount: 1,
     });
   }, []);
 
   const onFinish = (values) => {
     // Display a success message
-    message.success('Email sent successfully! We will get back to you soon', 2);
+    message.success('Email sent successfully! We will get back to you soon', 3);
     console.log('Form values:', values); // Optionally log the form values
+
+    // Reset form fields
+    setTimeout(() => {
+      form.resetFields();
+    },500)
   };
 
   return (
     <Form
       {...formItemLayout}
+      form={form} // Attach form instance
       variant={componentVariant}
       style={{
         display: 'flex',
@@ -55,6 +54,7 @@ const Support = () => {
       onFinish={onFinish} // Set the onFinish prop
     >
       <h2>Share your problem with us</h2>
+
       {/* Email Input */}
       <Form.Item
         label="Email"
@@ -82,11 +82,7 @@ const Support = () => {
           },
         ]}
       >
-        <Input
-          style={{
-            width: '100%',
-          }}
-        />
+        <Input style={{ width: '100%' }} />
       </Form.Item>
 
       {/* Description TextArea */}
@@ -95,12 +91,11 @@ const Support = () => {
         name="Description"
         rules={[
           {
-            // required: true,
             message: 'Please enter a description!',
           },
         ]}
       >
-        <Input.TextArea style={{ height: '200px' }} /> {/* Adjust height if needed */}
+        <Input.TextArea style={{ height: '200px' }} />
       </Form.Item>
 
       <Form.Item
