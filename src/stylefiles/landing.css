@@ -1,6 +1,9 @@
 body{
     background-color: #f5f5f5;
 }
+a{
+    text-decoration: none;
+}
 .bubble1{
     top: 120px;
     /* left: 160px; */

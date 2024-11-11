@@ -88,7 +88,7 @@ function Landing() {
               <h1>Top companies hiring now<b>.</b></h1>
               <div className='companies-list' ref={companiesRef}>
                 {companies.map((company, index) => (
-                  <a href={company.src} rel='noreferrer' target="_blank" key={index}>
+                  <a href={company.src} style={{ textDecoration: 'none',color: 'black' }} rel='noreferrer' target="_blank" key={index}>
                     <div className='company' id='card'>
                       <img src={company.img} alt={company.name} />
                       <h3>{company.name}</h3>
