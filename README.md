@@ -1,3 +1,11 @@
+___  versions ----
+PS C:\Users\Rupe\OneDrive\Documents\Git Hub\Portfolio> node -v
+v18.20.4
+PS C:\Users\Rupe\OneDrive\Documents\Git Hub\Portfolio> npm -v
+10.7.0
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
